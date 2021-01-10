@@ -48,7 +48,7 @@ int main()
   //zmienne
   vector<string> info;
   string a, line;
-  
+  info.reserve(91858);
 	ifstream justfile;
   justfile.open("CRISP_PRJ_C_FY2009.CSV");
 	for(int m=0;m<size;m++)// replacement
@@ -62,7 +62,7 @@ int main()
     }
   }
 	justfile.close();
-
+  info.shrink_to_fit();
   ofstream Output;//output to file output.txt
   Output.open("output.txt");
   int x=0;
